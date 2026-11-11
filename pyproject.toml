@@ -1,0 +1,13 @@
+[project]
+name = "claude-toolkit"
+version = "0.1.0"
+description = "Claude Code plugins by Nguyen Thanh Binh"
+requires-python = ">=3.11"
+license = "MIT"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["plugins/figure-docs/skills/md-to-html-doc/scripts"]

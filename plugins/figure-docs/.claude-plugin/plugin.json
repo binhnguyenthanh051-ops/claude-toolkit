@@ -1,0 +1,14 @@
+{
+  "name": "figure-docs",
+  "displayName": "Figure-led docs",
+  "version": "0.1.0",
+  "description": "Turn figure-led Markdown into report-style HTML or Claude Docs: numbered figures, captioned tables, contents, light/dark, print to PDF",
+  "author": {
+    "name": "Nguyen Thanh Binh",
+    "url": "https://github.com/binhnguyenthanh051-ops"
+  },
+  "homepage": "https://github.com/binhnguyenthanh051-ops/claude-toolkit",
+  "repository": "https://github.com/binhnguyenthanh051-ops/claude-toolkit",
+  "license": "MIT",
+  "keywords": ["markdown", "html", "mermaid", "documentation", "report", "claude-docs"]
+}

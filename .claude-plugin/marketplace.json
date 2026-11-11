@@ -1,0 +1,17 @@
+{
+  "name": "binh-toolkit",
+  "description": "Claude Code plugins by Nguyen Thanh Binh: figure-led engineering documents and more",
+  "owner": {
+    "name": "Nguyen Thanh Binh",
+    "url": "https://github.com/binhnguyenthanh051-ops"
+  },
+  "plugins": [
+    {
+      "name": "figure-docs",
+      "source": "./plugins/figure-docs",
+      "description": "Turn figure-led Markdown into report-style HTML or Claude Docs: numbered figures, captioned tables, contents, light/dark, print to PDF",
+      "category": "documentation",
+      "tags": ["markdown", "html", "mermaid", "documentation", "report"]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest
+      - run: python -m pytest -q
+      - name: Manifests are valid JSON with the required fields
+        run: |
+          python - <<'EOF'
+          import json
+          m = json.load(open(".claude-plugin/marketplace.json"))
+          assert m["name"] and m["owner"]["name"] and m["plugins"], "marketplace.json"
+          for p in m["plugins"]:
+              src = p["source"]
+              man = json.load(open(f"{src}/.claude-plugin/plugin.json"))
+              assert man["name"] == p["name"], f"name mismatch: {p['name']}"
+              assert man["version"], f"{p['name']} has no version"
+          print("manifests ok")
+          EOF
